@@ -48,9 +48,8 @@ The `browser` property can also be specified on the command line, e.g. `pipenv r
 ### CI Pipeline
 This repo contains a CI pipeline implemented using [GitHub Actions]. Any push to the `main` branch or any pull request on the `main` branch will trigger the pipeline, which runs in a Linux VM on the cloud within GitHub. The pipeline consists of two separate jobs which run in parallel:
 * `run-tests-on-chrome`
-* `run-tests-on-firefox`
   
-Each job checks out the repo then runs the test suite on Chrome/Firefox via `pipenv run pytest` or `pipenv run pytest --browser Firefox`.
+The job checks out the repo then runs the test suite on Chrome via `pipenv run pytest`
 
 In addition to the automated triggers above, the CI pipeline has a manual trigger actionable by clicking "Run workflow" on the [Continuous Integration](https://github.com/lungovan/file-upload-test-bdd/actions/workflows/ci.yml) page. 
-This allows the user to select the branch to run the pipeline on, so tests can be run on a branch without the need for a pull request. This option is only visible if you are the repo owner.
+This allows the user to select the branch to run the pipeline on, so tests can be run on a branch without the need for a pull request.
